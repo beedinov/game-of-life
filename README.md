@@ -1,3 +1,7 @@
+### `yarn`
+
+Run this command to install dependecies
+
 ### `yarn start`
 
 Runs the app in the development mode.\
