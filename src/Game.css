@@ -1,0 +1,15 @@
+.grid {
+  margin: 100px auto;
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #777;
+  float: left;
+  background-color: #FFF;
+}
+
+.cell.alive {
+  background-color: #000;
+}
