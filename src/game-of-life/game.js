@@ -19,7 +19,7 @@ export const getInitialGrid = (rows: number, cols: number, cells: number = 200):
     return initialGrid;
 };
 
-const getLiveNeighbors = (grid: Grid, currentRow: number, currentCol: number): number => {
+const getLiveNeighbours = (grid: Grid, currentRow: number, currentCol: number): number => {
     let count = 0;
     
     for (let row = currentRow - 1; row <= currentRow + 1; row++) {
@@ -35,10 +35,10 @@ const getLiveNeighbors = (grid: Grid, currentRow: number, currentCol: number): n
     return count;
 };
 
-const evaluate = (alive: LiveStatus, liveNeighborsCount: number, y: number, x: number): LiveStatus => {
-    if (!alive && liveNeighborsCount === 3) return 1;
-    if (alive && liveNeighborsCount > 3) return 0;
-    if (alive && liveNeighborsCount < 2) return 0;
+const evaluate = (alive: LiveStatus, liveNeighboursCount: number, y: number, x: number): LiveStatus => {
+    if (!alive && liveNeighboursCount === 3) return 1;
+    if (alive && liveNeighboursCount > 3) return 0;
+    if (alive && liveNeighboursCount < 2) return 0;
 
     return alive;
 }
@@ -48,9 +48,9 @@ export const getNextGeneration = (grid: Grid): Grid => {
 
     for (let row = 0; row < grid.length; row++) {
         for(let col = 0; col < grid[row].length; col++) {
-            const liveNeighborsCount = getLiveNeighbors(grid, row, col);
+            const liveNeighboursCount = getLiveNeighbours(grid, row, col);
 
-            nextGrid[row][col] = evaluate(grid[row][col], liveNeighborsCount, row, col);
+            nextGrid[row][col] = evaluate(grid[row][col], liveNeighboursCount, row, col);
         }
     }
 

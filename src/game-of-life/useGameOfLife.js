@@ -11,7 +11,7 @@ export function useGameOfLife(rows: number, cols: number, timeout: number = 400,
     
     useEffect(() => {
         const timeoutId = setInterval(() => {
-            setGrid(prevGrid => getNextGeneration(prevGrid));
+            setGrid(getNextGeneration);
         }, timeout);
 
         return () => {
